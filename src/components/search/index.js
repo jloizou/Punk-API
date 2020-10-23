@@ -1,3 +1,3 @@
-import searchFil from "./search" 
+import SearchFil from "./search" 
 
-export default searchFil
+export default SearchFil

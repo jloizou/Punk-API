@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const cards = () => {
+const Cards = (props) => {
+
+    let [beers, setBeers] = useState([])
+
+    fetch('https://api.punkapi.com/v2/beers')
+    .then(data => data.json())
+    .then(data => { 
+        setBeers(data)
+    })
+
+
+
     return (
         <div>
             
@@ -8,4 +19,7 @@ const cards = () => {
     )
 }
 
-export default cards
+export default Cards
+
+
+//to do this, first look at the data and how it could be filtered with the selects

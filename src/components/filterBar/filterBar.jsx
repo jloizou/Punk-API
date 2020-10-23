@@ -1,16 +1,17 @@
 import React from 'react'
-import searchFil from "../search"
-import selectsFil from "../selects"
+import SearchFil from "../search"
+import SelectsFil from "../selects"
 
-const filterBar = (props) => {
+const FilterBar = (props) => {
+    
 
     return (
         <div>
-            <searchFil />
-            <selectsFil />
+            <SearchFil searchFilterFtn={props.searchFilterFtn}/>
+            <SelectsFil selectsFilterFtn={props.selectsFilterFtn}/>
             
         </div>
     )
 }
 
-export default filterBar
+export default FilterBar

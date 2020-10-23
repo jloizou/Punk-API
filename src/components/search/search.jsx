@@ -1,11 +1,14 @@
 import React from 'react'
 
-const searchFil = () => {
+const SearchFil = (props) => {
+    const searchFtn = props.searchFilterFtn 
+
+    
     return (
         <div>
-            
+            <input type="text" onInput={e => searchFtn(e.target.value)}></input>
         </div>
     )
 }
 
-export default searchFil
+export default SearchFil

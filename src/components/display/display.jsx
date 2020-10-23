@@ -1,12 +1,13 @@
 import React from 'react'
-import cards from "../cards"
+import Cards from "../cards"
 
-const beerDisplay = () => {
+const BeerDisplay = (props) => {
     return (
         <div>
+            <Cards props={props}/>
             
         </div>
     )
 }
 
-export default beerDisplay
+export default BeerDisplay

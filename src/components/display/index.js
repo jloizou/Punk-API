@@ -1,3 +1,3 @@
-import beerDisplay from "./display" 
+import BeerDisplay from "./display" 
 
-export default beerDisplay
+export default BeerDisplay

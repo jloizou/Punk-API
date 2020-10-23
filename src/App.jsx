@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
-import filterBar from "./components/filterBar"
-import beerDisplay from "./components/display"
+import FilterBar from "./components/filterBar"
+import BeerDisplay from "./components/display"
 
 import './App.css';
 
 function App() {
 
-  const [searchFilter, setSearchFilter] = useState([])
-  const [selectsFilter, setSelectsFilter] = useState([])
+  let [searchFilter, setSearchFilter] = useState("")
+  let [selectsFilter, setSelectsFilter] = useState([])
 
   const searchFilterFtn = (param) => { 
-    setSearchFilter(searchFilter.push(param))
-  }
+    setSearchFilter(param)
+    }
+  
 
   const selectsFilterFtn = (param) => { 
-    setSelectsFilter(selectsFilter.push(param))
+    setSelectsFilter(param);
+    
   }
 
 
   return (
     <div className="App">
-      <filterBar selectsFilterFtn={selectsFilterFtn} searchFilterFtn={searchFilterFtn}/> 
-      <beerDisplay />
-     
+      <FilterBar selectsFilterFtn={selectsFilterFtn} searchFilterFtn={searchFilterFtn}/> 
+      <BeerDisplay searchFilter={searchFilter} selectsFilter={selectsFilter}/>
+     <p>{selectsFilter}</p>
     </div>
   );
 }

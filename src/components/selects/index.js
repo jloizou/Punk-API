@@ -1,3 +1,3 @@
-import selectsFil from "./selects"
+import SelectsFil from "./selects"
 
-export default selectsFil
+export default SelectsFil

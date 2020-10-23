@@ -1,3 +1,3 @@
-import filterBar from "./filterBar"
+import FilterBar from "./filterBar"
 
-export default filterBar
+export default FilterBar
