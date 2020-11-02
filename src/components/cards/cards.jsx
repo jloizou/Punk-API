@@ -1,47 +1,21 @@
 import React, { useState } from 'react'
 
 const Cards = (props) => {
-    console.log((props.selectsFilter), (props.searchFilter))
+   const {selectsFilter, searchFilter} = props
 
-    let [beers, setBeers] = useState([])
-    const filteredBeers= (number, input) => { 
-       if(number !== "" & input.length === 0){ 
-        fetch(`https://api.punkapi.com/v2/beers/1`)
+
+   let beersArr = []
+    const filteredBeers= (searchFilter) => { 
+        fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchFilter}`)
         .then(data => data.json())
         .then(data => { 
-     setBeers(data)
-     e.stopPropagation()
-       })
+            beersArr.push(data);
+        })
+    }
 
- } else if(number !== "" & input.length === 0){ 
-    fetch(`https://api.punkapi.com/v2/beers/1`)
-    .then(data => data.json())
-    .then(data => { 
- setBeers(data)    
-  e.stopPropagation()
+ console.log(beersArr)
 
-   }) 
-}  else if(number == null & input.length === 0){ 
-    fetch(`https://api.punkapi.com/v2/beers/1`)
-    .then(data => data.json())
-    .then(data => { 
- setBeers(data)
- e.stopPropagation()
-
-   })
-}  else if(number === null& input.length === 0){ 
-    fetch(`https://api.punkapi.com/v2/beers/1`)
-    .then(data => data.json())
-    .then(data => { 
- setBeers(data)
- e.stopPropagation()
-
-   })
-
- }
- console.log(beers)
-}
-filteredBeers(props.selectsFilter, props.searchFilter)
+filteredBeers(selectsFilter, searchFilter)
 
     return (
         <div>
