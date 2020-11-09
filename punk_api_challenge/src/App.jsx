@@ -25,7 +25,7 @@ function App() {
    <div className={styles.page}>
     <div className={styles.filterBar}>
       <h1>Punk API Beer Search!</h1>
-      <h3>Search for Beers below, by text or by ABV content</h3>
+      <h3>Search for Beers below, by text and by max ABV content</h3>
       <FilterBar selectsFilterFtn={selectsFilterFtn} searchFilterFtn={searchFilterFtn}/> 
       </div>
       <div className={styles.beerDisplay}>

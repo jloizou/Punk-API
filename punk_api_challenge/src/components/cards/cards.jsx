@@ -27,48 +27,11 @@ const Cards = (props) => {
             url += `?beer_name=${searchFilter}&abv_lt=${selectsFilter}`
             console.log("HERE@S THE SELECT URL " + url)
 
-
         fetch(url)
             .then(data => data.json())
             .then(data => {
                 setBeers(data);
             }) 
-
-
-
-
-        // if (!selectsFilter && searchFilter) {
-        //     fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchFilter}&abv_lt=${selectsFilter}`)
-        //         .then(data => data.json())
-        //         .then(data => {
-        //             setBeers(data);
-        //             console.log('if1')
-        //         })
-        // } else if (!selectsFilter  && searchFilter) {
-        //     fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchFilter}`)
-        //         .then(data => data.json())
-        //         .then(data => {
-        //             setBeers(data);
-        //             console.log('if2')
-
-        //         })
-        // } else if (selectsFilter && !searchFilter) {
-        //     fetch(`https://api.punkapi.com/v2/beers?abv_lt=${selectsFilter}`)
-        //         .then(data => data.json())
-        //         .then(data => {
-        //             setBeers(data);
-        //             console.log(data)
-
-        //         })
-        // } else {
-        //     fetch(`https://api.punkapi.com/v2/beers`)
-        //         .then(data => data.json())
-        //         .then(data => {
-        //             setBeers(data);
-        //             console.log(selectsFilter)
-        //             console.log(searchFilter)
-        //         })
-        // }
     }
 console.log(beers)
 
@@ -94,7 +57,6 @@ console.log(beers)
 
 export default Cards
 
-//plan for finishing the project: 
-//pseudo code each if statement for what I want out of each 
-//then write it up 
-//look at any errors which come up and sort them
+//it works!!!!! what to do now: 
+//go to selects filters and change the button titles 
+//add labels to make it more intuitive
