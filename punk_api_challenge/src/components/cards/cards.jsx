@@ -13,20 +13,20 @@ const Cards = (props) => {
 
 
     const handleSearch = () => {
-        // JAMES!!! you are repeating lots of lines of code... 
-        // Is there a way we don't have to repeat ourselves so much?
         let url = "https://api.punkapi.com/v2/beers"
 
-        if (searchFilter !== ""){ 
-            // CHANGE THIS LINE ... append ?beer_name= on the end of the url
-            url += `?beer_name.....`
+        if (searchFilter !== "" && selectsFilter.length == 0){ 
+            url += `?beer_name=${searchFilter}`
             console.log("HERE@S THE SEARCH URL " + url)
         } 
-        if (selectsFilter.length == 0) {
-            // CHANGE THIS LINE ... apend ?abv_lt on the end of the url
-            url += `......`
+        if (searchFilter == "" && selectsFilter.length !== 0) {
+            url += `?abv_lt=${selectsFilter}`
             console.log("HERE@S THE SELECT URL " + url)
         } 
+        if(selectsFilter.length !== 0 && searchFilter !== "")
+            url += `?beer_name=${searchFilter}&abv_lt=${selectsFilter}`
+            console.log("HERE@S THE SELECT URL " + url)
+
 
         fetch(url)
             .then(data => data.json())
@@ -94,9 +94,7 @@ console.log(beers)
 
 export default Cards
 
-//None of the filters work now
-//even with the search and selects filled in, it now can only do the else option 
-
-//what to do tomorrow? 
-//debug with Andy 
-//have tried for ages, only option now is coaches
+//plan for finishing the project: 
+//pseudo code each if statement for what I want out of each 
+//then write it up 
+//look at any errors which come up and sort them
