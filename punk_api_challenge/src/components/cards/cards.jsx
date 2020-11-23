@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styles from "./cards.module.scss"
 
 const Cards = (props) => {
-    const { selectsFilter, searchFilter } = props
+    const { selectsFilter, searchFilter, searchFilterFtn } = props
 
     const [beers, setBeers] = useState([])
 
@@ -13,6 +13,17 @@ const Cards = (props) => {
 
 
     const handleSearch = () => {
+
+        // if(searchFilter !== ""){ 
+        //     let splitFilter = searchFilter.split("")
+        //     let cleanedFilter = splitFilter.map(char => { 
+        //         return char !== " "
+        //     })
+
+        //     searchFilterFtn(cleanedFilter.join(""))
+        // }
+
+
         let url = "https://api.punkapi.com/v2/beers"
 
         if (searchFilter !== "" && selectsFilter.length == 0){ 
@@ -57,6 +68,3 @@ console.log(beers)
 
 export default Cards
 
-//it works!!!!! what to do now: 
-//go to selects filters and change the button titles 
-//add labels to make it more intuitive

@@ -22,6 +22,7 @@ function App() {
   }
 
   return (
+    <body>
    <div className={styles.page}>
     <div className={styles.filterBar}>
       <h1>Punk API Beer Search!</h1>
@@ -29,9 +30,14 @@ function App() {
       <FilterBar selectsFilterFtn={selectsFilterFtn} searchFilterFtn={searchFilterFtn}/> 
       </div>
       <div className={styles.beerDisplay}>
-      <BeerDisplay searchFilter={searchFilter} selectsFilter={selectsFilter}/>
+      <BeerDisplay searchFilter={searchFilter} selectsFilter={selectsFilter} searchFilterFtn={searchFilterFtn}/>
     </div>
     </div>
+    
+    <script src="/__/firebase/8.0.2/firebase-app.js"></script>
+    <script src="/__/firebase/8.0.2/firebase-analytics.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    </body>
   );
 }
 
